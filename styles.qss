@@ -1,0 +1,391 @@
+/* ═══════════════════════════════════════════════════════════════════
+   GLOBAL
+═══════════════════════════════════════════════════════════════════ */
+QMainWindow, QWidget {
+    background: #F5F6FA;
+    font-family: "Segoe UI", "Ubuntu", sans-serif;
+    font-size: 12px;
+    color: #1A1D2E;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════════════════════════ */
+QWidget#header { background: #dad5e0; }
+
+QLabel#logoLabel {
+    color: #382252;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+QLabel#dtLabel {
+    color: #382252;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 10px;
+}
+
+QLabel#cashierLabel {
+    color: #382252;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 10px;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#macroStateBadge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    padding: 3px 10px;
+    color: #94A3B8;
+}
+
+QLabel#macroStateBadge[macroState="idle"]      { color: #94A3B8; }
+QLabel#macroStateBadge[macroState="countdown"] { color: #F59E0B; }
+QLabel#macroStateBadge[macroState="recording"] { color: #EF4444; }
+QLabel#macroStateBadge[macroState="playing"]   { color: #34D399; }
+QLabel#macroStateBadge[macroState="paused"]    { color: #D97706; }
+
+QPushButton#closeButton {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+}
+QPushButton#closeButton:hover {
+    background: #e81123;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SPLITTER
+═══════════════════════════════════════════════════════════════════ */
+QSplitter#mainSplitter::handle { background: #E2E6F0; }
+QWidget#posWidget               { background: #F5F6FA; }
+QWidget#macroWidget             { background: #0F1117; border-left: 2px solid #7C3AED; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   POS — SECTION TITLE
+═══════════════════════════════════════════════════════════════════ */
+QLabel#sectionTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A1D2E;
+    border-bottom: 2px solid #3D8EF0;
+    padding-bottom: 3px;
+    margin-bottom: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   POS — PRODUCTS TABLE
+═══════════════════════════════════════════════════════════════════ */
+QTableWidget#productsTable {
+    background: #FFF;
+    border: 1px solid #E2E6F0;
+    border-radius: 8px;
+    alternate-background-color: #F8F9FD;
+    selection-background-color: #DBE9FC;
+    selection-color: #1A1D2E;
+    gridline-color: transparent;
+    outline: none;
+}
+QTableWidget#productsTable::item {
+    padding: 6px 10px;
+    border-bottom: 1px solid #a3c8d1;
+}
+QHeaderView::section {
+    background: #e7e6e8;
+    color: #382252;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 8px 10px;
+    border: none;
+    letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   POS — SUMMARY BOX
+═══════════════════════════════════════════════════════════════════ */
+QFrame#summaryBox {
+    background: #FFF;
+    border: 1px solid #E2E6F0;
+    border-radius: 8px;
+}
+QLabel#infoKey     { color: #6B7280; }
+QLabel#totalLabel  { font-size: 20px; font-weight: 800; color: #1A1D2E; }
+QLabel#cashLabel   { font-size: 15px; font-weight: 700; color: #2563EB; }
+QLabel#changeLabel { font-size: 17px; font-weight: 700; color: #16A34A; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   POS — CLIENT INPUT
+═══════════════════════════════════════════════════════════════════ */
+QLabel#fieldLabel { font-size: 11px; color: #6B7280; font-weight: 600; }
+
+QLineEdit#clientInput {
+    background: #FFF;
+    border: 2px solid #D1D5DB;
+    border-radius: 7px;
+    padding: 4px 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1D2E;
+}
+QLineEdit#clientInput:focus { border-color: #3D8EF0; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   POS — WARNING LABEL
+═══════════════════════════════════════════════════════════════════ */
+QLabel#warningLabel {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   POS — ACTION BUTTONS
+═══════════════════════════════════════════════════════════════════ */
+QPushButton#btnPay {
+    background: #FFF;
+    color: #1aa132;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+QPushButton#btnPay:hover    { background: #1aa132; color: #FFF; }
+QPushButton#btnPay:disabled { background: #b8babf; color: #E5E7EB; }
+
+QPushButton#btnCancel {
+    background: #FFF;
+    color: #DC2626;
+    border: 2px solid #FECACA;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+QPushButton#btnCancel:hover { background: #DC2626; color: #FFF; }
+
+QFrame#separator { color: #E2E6F0; max-height: 1px; }
+
+QPushButton#btnLoadCart {
+    background: #e7e6e8;
+    color: #382252;
+    border: 1px solid #c0bec4;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0 10px;
+}
+QPushButton#btnLoadCart:hover { background: #c7c5c9; }
+
+QLabel#emptyCartLabel {
+    color: #9CA3AF;
+    font-size: 13px;
+    qproperty-alignment: AlignCenter;
+}
+
+/* Payment section dimmed when no check is loaded */
+QWidget[dimmed="true"] {
+    opacity: 0.4;
+}
+QWidget[dimmed="true"] * {
+    color: #9CA3AF;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RECEIPT DIALOG
+═══════════════════════════════════════════════════════════════════ */
+QLabel#receiptBanner {
+    font-size: 15px;
+    font-weight: 700;
+    color: #16A34A;
+    margin-bottom: 4px;
+}
+
+QTextEdit#receiptBody {
+    background: #FAFAFA;
+    border: 1px solid #E2E6F0;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+}
+
+QPushButton#btnReceiptClose {
+    background: #1A1D2E;
+    color: #FFF;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+QPushButton#btnReceiptClose:hover { background: #2D3250; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MACRO PANEL — GLOBAL OVERRIDES
+═══════════════════════════════════════════════════════════════════ */
+QWidget#macroWidget QLabel,
+QWidget#macroWidget QCheckBox {
+    color: #382252;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 11px;
+}
+
+QLabel#macroTitle {
+    color: #382252;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #7C3AED;
+    padding-bottom: 4px;
+}
+QLabel#macroLogTitle {
+    color: #382252;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+QLabel#macroInfoVal   { color: #382252; font-weight: 700; }
+QLabel#macroCountdown { color: #382252; font-size: 28px; font-weight: 900; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MACRO PANEL — GROUPS
+═══════════════════════════════════════════════════════════════════ */
+QGroupBox#macroGroup {
+    color: #382252;
+    border: 1px solid #1E293B;
+    border-radius: 6px;
+    margin-top: 8px;
+    padding-top: 4px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+QGroupBox#macroGroup::title {
+    subcontrol-origin: margin;
+    left: 8px;
+    padding: 0 4px;
+    color: #382252;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MACRO PANEL — BUTTONS
+═══════════════════════════════════════════════════════════════════ */
+QPushButton#btnMacroRecord {
+    background: #FFFFFF; color: #1aa132; border: none; border-radius: 6px; font-weight: 700;
+}
+QPushButton#btnMacroRecord:hover    { background: #1aa132; color: #FFFFFF; }
+QPushButton#btnMacroRecord:disabled { background: #E5E7EB; color: #FFFFFF; }
+
+QPushButton#btnMacroStop {
+    background: #FFFFFF; color: #DC2626; border: none; border-radius: 6px; font-weight: 700;
+}
+QPushButton#btnMacroStop:hover    { background: #DC2626; color: #FFFFFF; }
+QPushButton#btnMacroStop:disabled { background: #E5E7EB; color: #FFFFFF; }
+
+QPushButton#btnMacroPlay {
+    background: #e6e3e8; color: #382252; border: none; border-radius: 6px; font-weight: 700;
+}
+QPushButton#btnMacroPlay:hover    { background: #c7c5c9; }
+QPushButton#btnMacroPlay:disabled { background: #c7c5c9; color: #382252; }
+
+QPushButton#btnMacroPause {
+    background: #e6e3e8; color: #382252; border: none; border-radius: 6px; font-weight: 700;
+}
+QPushButton#btnMacroPause:hover    { background: #c7c5c9; }
+QPushButton#btnMacroPause:disabled { background: #c7c5c9; color: #382252; }
+
+QPushButton#btnMacroStopPlay {
+    background: #e6e3e8; color: #382252; border: none; border-radius: 6px; font-weight: 700;
+}
+QPushButton#btnMacroStopPlay:hover    { background: #c7c5c9; }
+QPushButton#btnMacroStopPlay:disabled { background: #c7c5c9; color: #382252; }
+
+QPushButton#btnMacroFile {
+    background: #e6e3e8;
+    color: #382252;
+    border: 1px solid #334155;
+    border-radius: 5px;
+}
+QPushButton#btnMacroFile:hover    { background: #c7c5c9; }
+QPushButton#btnMacroFile:disabled { background: #c7c5c9; color: #382252; }
+
+QPushButton#btnMacroClear {
+    background: #e6e3e8;
+    color: #382252;
+    border: 1px solid #334155;
+    border-radius: 5px;
+}
+QPushButton#btnMacroClear:hover    { background: #c7c5c9; }
+QPushButton#btnMacroClear:disabled { background: #c7c5c9; color: #382252; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MACRO PANEL — SPINBOX / CHECKBOX
+═══════════════════════════════════════════════════════════════════ */
+QWidget#macroWidget QSpinBox {
+    background: #e6e3e8;
+    color: #382252;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+QWidget#macroWidget QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+    border: 1px solid #e6e3e8;
+    border-radius: 3px;
+    background: #e6e3e8;
+}
+QWidget#macroWidget QCheckBox::indicator:checked {
+    background: #382252;
+    border-color: #382252;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MACRO PANEL — PROGRESS BAR
+═══════════════════════════════════════════════════════════════════ */
+QProgressBar#macroProgress {
+    background: #e6e3e8;
+    border: none;
+    border-radius: 3px;
+}
+QProgressBar#macroProgress::chunk {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #7C3AED, stop:1 #06B6D4
+    );
+    border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MACRO PANEL — EVENT LOG
+═══════════════════════════════════════════════════════════════════ */
+QListWidget#macroLog {
+    background: #e6e3e8;
+    border: 1px solid #e6e3e8;
+    border-radius: 6px;
+    outline: none;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 10px;
+}
+QListWidget#macroLog::item {
+    padding: 2px 8px;
+    border-bottom: 1px solid #0D1117;
+    color: #382252;
+}
+QListWidget#macroLog::item:hover { background: #e6e3e8; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════════════════════════════ */
+QScrollBar:vertical           { width: 5px; background: transparent; }
+QScrollBar::handle:vertical   { background: #e6e3e8; border-radius: 3px; min-height: 16px; }
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical { height: 0; }
